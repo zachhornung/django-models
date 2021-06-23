@@ -1,10 +1,9 @@
 from django.urls import path
-from .views import HomeView, AboutView
+from .views import HomeView, AboutView, SnackListView, SnackDetailView
 
 urlpatterns = [
-    path('', HomeView.as_view(), name='home'),
     path("home/", HomeView.as_view(), name="home"),
     path("about/", AboutView.as_view(), name="about"),
-    # path("", ThingListView.as_view(), name="thing_list"),
-    # path("<int:pk>/", ThingDetailView.as_view(), name="thing_detail"),
+    path("", SnackListView.as_view(), name="snack_list"),
+    path("<int:pk>/", SnackDetailView.as_view(), name="snack_detail"),
 ]

@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block babies %}
+  {% for snack in object_list %}
+    <a href="{% url 'snack_detail' snack.pk %}">
+      <h2 style='color:wheat; font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;'>{{snack.name}}</h2>
+    </a>
+  {% endfor %}
+{% endblock babies %}
